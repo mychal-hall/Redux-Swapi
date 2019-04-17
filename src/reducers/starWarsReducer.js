@@ -1,8 +1,8 @@
-import { 
+import {
   FETCH_CHARACTER_START,
   FETCH_CHARACTER_SUCCESS,
   FETCH_CHARACTER_FAIL
- } from "../actions";
+} from "../actions";
 const initialState = {
   characters: [],
   error: null,
@@ -26,7 +26,8 @@ export const charsReducer = (state = initialState, action) => {
     case FETCH_CHARACTER_FAIL:
       return {
         ...state,
-        fetching: false
+        fetching: false,
+        error: action.payload
       };
     // Fill me in with the important reducers
     // action types should be FETCHING, SUCCESS and FAILURE
